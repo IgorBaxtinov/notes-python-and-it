@@ -1,0 +1,28 @@
+Декоратор это способ модифицировать поведение функции без изменения ее кода!
+
+1 Создаем декоратор и принимаем в качестве аргумента другую функцию!
+2 Внутри декоратор создаем еще одну функцию обертку wrapper, который и будет вызывать нашу функцию, а так же делать что-то еще (то что мы добавим как модифицированное поведение)
+
+
+import time
+
+def my_decorator(func):
+    def wrapper():
+        time_start = time.time()
+        func()
+        print (time_start)
+    return wrapper
+
+
+
+@my_decorator
+def do_greetings():
+    print ('hello')
+
+@my_decorator
+def do_farewell():
+    print ('bye, bye')
+
+
+do_greetings()
+do_farewell()
