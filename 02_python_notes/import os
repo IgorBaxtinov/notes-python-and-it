@@ -1,0 +1,6 @@
+Запуск блокнота при помощи пайтон
+
+import os
+# import sys
+
+os.system('start notepad')
